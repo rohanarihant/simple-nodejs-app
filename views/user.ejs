@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Home</title>
+    <tdnk rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>This is Users page</h1>
+    <p>Welcome to Users page</p>
+    <h1>Users Page</h1>
+    <input type="button" onClick="logOut()" value='Log Out'>
+    <h2>Users:</h2>
+    <table border="1px solid">
+      <tr><td>User Id</td>
+        <td>Username</td>
+        <td>Email</td>
+        <td>Phone</td>
+        <td>Gender</td>
+        <td>Hobbies</td>
+        <td>Delete</td>
+        <td> Edit </td>
+    
+      <% for(var i=0;i<data.length;i++) {%>
+      <tr>
+      <td><%= data[i].id %></td>
+      <td><%= data[i].username %></td>
+      <td><%= data[i].email %></td>
+      <td><%= data[i].phone %></td>
+      <td><%= data[i].gender %></td>
+      <td><%= data[i].hobbies %></td>
+      <td><a href="/delete/<%= data[i].id %>">Delete</a></td>
+      <td><a href="/edit/<%= data[i].id %>">Edit</a></td>
+       </tr>
+      <% } %>
+   
+    </table>
+  <script>
+  function logOut(){
+    window.location.assign("http://localhost:3000/logout");
+  }
+  </script>
+  </body>
+</html>
