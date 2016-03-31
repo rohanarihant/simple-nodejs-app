@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+    <form method="post" action="/edit/<%= data.id %>">
+    	
+      <label>Username</label>
+    	<p><input type="username" name="username" value="<%= data.username %>"></p>
+    	
+      <label>Phone</label>
+    	<p><input type="text" name="phone" value="<%= data.phone %>"></p>
+      
+      <label>Gender</label>
+      <p><input type="radio" name="gender" value="male">male
+      <input type="radio" name="gender"  value="female">female</p>
+      
+      <label>hobbies</label>
+      <p><input type="checkbox" name="hobbies" value="cricket">Cricket
+      <input type="checkbox" name="hobbies" value="dancing">Dancing
+     <input type="checkbox" name="hobbies" value="singing">Singing
+      <input type="checkbox" name="hobbies" value="acting">Acting</p>
+      <input type="submit" value="update">
+   		</form>
+  </body>
+</html>
